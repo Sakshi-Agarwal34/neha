@@ -619,3 +619,154 @@ Date:   Wed Jun 3 22:42:14 2026 +0530
     names.txt file is added
 PS C:\Users\user\Desktop\shyam>
 fwd-i-search: _
+Microsoft Windows [Version 10.0.26200.8524]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\user>cd desktop
+
+C:\Users\user\Desktop>cd shyam
+
+C:\Users\user\Desktop\shyam>git branch feature
+fatal: a branch named 'feature' already exists
+
+C:\Users\user\Desktop\shyam>git branch aa
+
+C:\Users\user\Desktop\shyam>git checkout aa
+fatal: Unable to create 'C:/Users/user/Desktop/shyam/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+
+C:\Users\user\Desktop\shyam>del .git\index.lock
+
+C:\Users\user\Desktop\shyam>git checkout aa
+M       names.txt
+Switched to branch 'aa'
+
+C:\Users\user\Desktop\shyam>git branch
+* aa
+  feature
+  master
+  tanya
+
+C:\Users\user\Desktop\shyam>git status
+On branch aa
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   names.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\user\Desktop\shyam>git add .
+
+C:\Users\user\Desktop\shyam>git commit -m "Your commit message"
+[aa 4a2da65] Your commit message
+ 1 file changed, 621 insertions(+)
+
+C:\Users\user\Desktop\shyam>git push -u origin aa
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (7/7), 4.49 KiB | 1.50 MiB/s, done.
+Total 7 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), done.
+remote:
+remote: Create a pull request for 'aa' on GitHub by visiting:
+remote:      https://github.com/Sakshi-Agarwal34/neha/pull/new/aa
+remote:
+To https://github.com/Sakshi-Agarwal34/neha.git
+ * [new branch]      aa -> aa
+branch 'aa' set up to track 'origin/aa'.
+
+C:\Users\user\Desktop\shyam>git checkout main
+error: pathspec 'main' did not match any file(s) known to git
+
+C:\Users\user\Desktop\shyam>git checkout master
+Switched to branch 'master'
+
+C:\Users\user\Desktop\shyam>git commit
+On branch master
+nothing to commit, working tree clean
+
+C:\Users\user\Desktop\shyam>git merge aa
+Updating 495cc17..4a2da65
+Fast-forward
+ names.txt | 621 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 621 insertions(+)
+
+C:\Users\user\Desktop\shyam>git log
+commit 4a2da650e02295101ff62faf862cdd9d66ed284c (HEAD -> master, origin/aa, aa)
+Author: Sakshi-Agarwal34 <agarwalseema61912@gmail.com>
+Date:   Thu Jun 4 07:59:14 2026 +0530
+
+    Your commit message
+
+commit 495cc178e3f1fce36d5bcbf8c87334924b24880e (tanya, feature)
+Author: Sakshi-Agarwal34 <agarwalseema61912@gmail.com>
+Date:   Wed Jun 3 23:47:50 2026 +0530
+
+    roll.txt file is added
+
+commit 09722f664ef118f1027b853a7f750a528e7deeff
+Author: Sakshi-Agarwal34 <agarwalseema61912@gmail.com>
+Date:   Wed Jun 3 23:46:45 2026 +0530
+
+    anya.txt file is added
+
+commit c994b3cf351cf4a89f45cbce9b8248dfdf33fea7 (origin/master)
+Author: Sakshi-Agarwal34 <agarwalseema61912@gmail.com>
+Date:   Wed Jun 3 22:42:14 2026 +0530
+
+    names.txt file is added
+
+C:\Users\user\Desktop\shyam>git remote -v
+origin  https://github.com/Sakshi-Agarwal34/neha.git (fetch)
+origin  https://github.com/Sakshi-Agarwal34/neha.git (push)
+
+C:\Users\user\Desktop\shyam>git push origin master
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/Sakshi-Agarwal34/neha.git
+   c994b3c..4a2da65  master -> master
+
+C:\Users\user\Desktop\shyam>git clone https:// github.com/Sakshi-Agarwal34/commclassroomOP.git
+Cloning into 'github.com/Sakshi-Agarwal34/commclassroomOP.git'...
+fatal: unable to access 'https://': Could not resolve host: info
+
+C:\Users\user\Desktop\shyam>git clone https://github.com/Sakshi-Agarwal34/commclassroomOP.git
+Cloning into 'commclassroomOP'...
+remote: Repository not found.
+fatal: repository 'https://github.com/Sakshi-Agarwal34/commclassroomOP.git/' not found
+
+C:\Users\user\Desktop\shyam>git clone https://github.com/kunal-kushwaha/commclassroomOP.gitit
+Cloning into 'commclassroomOP.gitit'...
+remote: Repository not found.
+fatal: repository 'https://github.com/kunal-kushwaha/commclassroomOP.gitit/' not found
+
+C:\Users\user\Desktop\shyam>git clone https://github.com/kunal-kushwaha/commclassroomOP.git
+Cloning into 'commclassroomOP'...
+remote: Repository not found.
+fatal: repository 'https://github.com/kunal-kushwaha/commclassroomOP.git/' not found
+
+C:\Users\user\Desktop\shyam>git clone https://github.com/Sakshi-Agarwal/neha.git
+Cloning into 'neha'...
+remote: Repository not found.
+fatal: repository 'https://github.com/Sakshi-Agarwal/neha.git/' not found
+
+C:\Users\user\Desktop\shyam>git clone https://github.com/Sakshi-Agarwal34/neha.git
+Cloning into 'neha'...
+remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 10 (delta 2), reused 10 (delta 2), pack-reused 0 (from 0)
+Receiving objects: 100% (10/10), 4.68 KiB | 1.56 MiB/s, done.
+Resolving deltas: 100% (2/2), done.
+
+C:\Users\user\Desktop\shyam>
+
+
+
+
+
+
+

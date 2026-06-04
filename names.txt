@@ -1,0 +1,621 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\user\Desktop> mkdir shyam
+
+
+    Directory: C:\Users\user\Desktop
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        03-06-2026     22:24                shyam
+
+
+PS C:\Users\user\Desktop> ls
+
+
+    Directory: C:\Users\user\Desktop
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        03-06-2026     10:16                intership  2 year
+d-----        02-06-2026     16:47                java
+d-----        30-05-2026     10:19                notes of intership
+d-----        30-05-2026     10:20                projects
+d-----        03-06-2026     22:24                shyam
+-a----        18-05-2026     10:16           1408 Visual Studio Code.lnk
+
+
+PS C:\Users\user\Desktop> cd shyam
+PS C:\Users\user\Desktop\shyam> ls
+PS C:\Users\user\Desktop\shyam> git init
+Initialized empty Git repository in C:/Users/user/Desktop/shyam/.git/
+PS C:\Users\user\Desktop\shyam> ls -a
+Get-ChildItem : Parameter cannot be processed because the parameter name
+'a' is ambiguous. Possible matches include: -Attributes -Directory -File
+-Hidden -ReadOnly -System.
+At line:1 char:4
++ ls -a
++    ~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-ChildItem], Parame
+   terBindingException
+    + FullyQualifiedErrorId : AmbiguousParameter,Microsoft.PowerShell.Comm
+   ands.GetChildItemCommand
+
+PS C:\Users\user\Desktop\shyam> Get-ChildItem -Force
+
+
+    Directory: C:\Users\user\Desktop\shyam
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d--h--        03-06-2026     22:27                .git
+
+
+PS C:\Users\user\Desktop\shyam> ls .git
+
+
+    Directory: C:\Users\user\Desktop\shyam\.git
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        03-06-2026     22:27                hooks
+d-----        03-06-2026     22:27                info
+d-----        03-06-2026     22:27                objects
+d-----        03-06-2026     22:27                refs
+-a----        03-06-2026     22:27            130 config
+-a----        03-06-2026     22:27             73 description
+-a----        03-06-2026     22:27             23 HEAD
+
+
+PS C:\Users\user\Desktop\shyam> touch names.txt
+touch : The term 'touch' is not recognized as the name of a cmdlet,
+function, script file, or operable program. Check the spelling of the
+name, or if a path was included, verify that the path is correct and try
+again.
+At line:1 char:1
++ touch names.txt
++ ~~~~~
+    + CategoryInfo          : ObjectNotFound: (touch:String) [], CommandNo
+   tFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\user\Desktop\shyam> ew-Item names.txt -ItemType File
+ew-Item : The term 'ew-Item' is not recognized as the name of a cmdlet,
+function, script file, or operable program. Check the spelling of the
+name, or if a path was included, verify that the path is correct and try
+again.
+At line:1 char:1
++ ew-Item names.txt -ItemType File
++ ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (ew-Item:String) [], Command
+   NotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\user\Desktop\shyam> ^C
+PS C:\Users\user\Desktop\shyam> New-Item names.txt -ItemType File
+
+
+    Directory: C:\Users\user\Desktop\shyam
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        03-06-2026     22:35              0 names.txt
+
+
+PS C:\Users\user\Desktop\shyam> git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        names.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\user\Desktop\shyam> git add .
+PS C:\Users\user\Desktop\shyam> git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   names.txt
+
+PS C:\Users\user\Desktop\shyam> git commit -m "names.txt file is added"
+[master (root-commit) c994b3c] names.txt file is added
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 names.txt
+PS C:\Users\user\Desktop\shyam> git status
+On branch master
+nothing to commit, working tree clean
+PS C:\Users\user\Desktop\shyam> vi names.txt
+vi : The term 'vi' is not recognized as the name of a cmdlet, function,
+script file, or operable program. Check the spelling of the name, or if a
+path was included, verify that the path is correct and try again.
+At line:1 char:1
++ vi names.txt
++ ~~
+    + CategoryInfo          : ObjectNotFound: (vi:String) [], CommandNotFo
+   undException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\user\Desktop\shyam> Add-Content names.txt "Radha"
+PS C:\Users\user\Desktop\shyam> notepad names.txt
+PS C:\Users\user\Desktop\shyam> code name.txt
+PS C:\Users\user\Desktop\shyam> Get -Content name.txt
+Get : The term 'Get' is not recognized as the name of a cmdlet, function,
+script file, or operable program. Check the spelling of the name, or if a
+path was included, verify that the path is correct and try again.
+At line:1 char:1
++ Get -Content name.txt
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (Get:String) [], CommandNotF
+   oundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\user\Desktop\shyam> Get -Content name.txt
+Get : The term 'Get' is not recognized as the name of a cmdlet, function,
+script file, or operable program. Check the spelling of the name, or if a
+path was included, verify that the path is correct and try again.
+At line:1 char:1
++ Get -Content name.txt
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (Get:String) [], CommandNotF
+   oundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\user\Desktop\shyam> Get-Content name.txt
+Get-Content : Cannot find path 'C:\Users\user\Desktop\shyam\name.txt'
+because it does not exist.
+At line:1 char:1
++ Get-Content name.txt
++ ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Users\user\Desktop\shyam
+   \name.txt:String) [Get-Content], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.G
+   etContentCommand
+
+PS C:\Users\user\Desktop\shyam> et-Content : Cannot find path 'C:\Users\user\Desktop\shyam\name.txt'
+et-Content : The term 'et-Content' is not recognized as the name of a
+cmdlet, function, script file, or operable program. Check the spelling of
+the name, or if a path was included, verify that the path is correct and
+try again.
+At line:1 char:1
++ et-Content : Cannot find path 'C:\Users\user\Desktop\shyam\name.txt'
++ ~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (et-Content:String) [], Comm
+   andNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\user\Desktop\shyam> because it does not exist.
+because : The term 'because' is not recognized as the name of a cmdlet,
+function, script file, or operable program. Check the spelling of the
+name, or if a path was included, verify that the path is correct and try
+again.
+At line:1 char:1
++ because it does not exist.
++ ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (because:String) [], Command
+   NotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\user\Desktop\shyam> At line:1 char:1
+The AT command has been deprecated. Please use schtasks.exe instead.
+
+Invalid command.
+
+The AT command schedules commands and programs to run on a computer at
+a specified time and date. The Schedule service must be running to use
+the AT command.
+
+AT [\\computername] [ [id] [/DELETE] | /DELETE [/YES]]
+AT [\\computername] time [/INTERACTIVE]
+    [ /EVERY:date[,...] | /NEXT:date[,...]] "command"
+
+\\computername     Specifies a remote computer. Commands are scheduled on the
+                   local computer if this parameter is omitted.
+id                 Is an identification number assigned to a scheduled
+                   command.
+/delete            Cancels a scheduled command. If id is omitted, all the
+                   scheduled commands on the computer are canceled.
+/yes               Used with cancel all jobs command when no further
+                   confirmation is desired.
+time               Specifies the time when command is to run.
+/interactive       Allows the job to interact with the desktop of the user  
+                   who is logged on at the time the job runs.
+/every:date[,...]  Runs the command on each specified day(s) of the week or
+                   month. If date is omitted, the current day of the month
+                   is assumed.
+/next:date[,...]   Runs the specified command on the next occurrence of the
+                   day (for example, next Thursday).  If date is omitted, the
+                   current day of the month is assumed.
+"command"          Is the Windows NT command, or batch program to be run.
+
+PS C:\Users\user\Desktop\shyam> + Get-Content name.txt
+At line:1 char:2
++ + Get-Content name.txt
++  ~
+Missing expression after unary operator '+'.
+At line:1 char:3
++ + Get-Content name.txt
++   ~~~~~~~~~~~
+Unexpected token 'Get-Content' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorReco
+   rdException
+    + FullyQualifiedErrorId : MissingExpressionAfterOperator
+
+PS C:\Users\user\Desktop\shyam> + ~~~~~~~~~~~~~~~~~~~~
+At line:1 char:2
++ + ~~~~~~~~~~~~~~~~~~~~
++  ~
+Missing expression after unary operator '+'.
+At line:1 char:3
++ + ~~~~~~~~~~~~~~~~~~~~
++   ~~~~~~~~~~~~~~~~~~~~
+Unexpected token '~~~~~~~~~~~~~~~~~~~~' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorReco
+   rdException
+    + FullyQualifiedErrorId : MissingExpressionAfterOperator
+
+PS C:\Users\user\Desktop\shyam>     + CategoryInfo          : ObjectNotFound: (C:\Users\user\Desktop\shyam
+>>    \name.txt:String) [Get-Content], ItemNotFoundException
+At line:1 char:6
++     + CategoryInfo          : ObjectNotFound: (C:\Users\user\Desktop\ ...
++      ~
+Missing expression after unary operator '+'.
+At line:1 char:7
++     + CategoryInfo          : ObjectNotFound: (C:\Users\user\Desktop\ ...
++       ~~~~~~~~~~~~
+Unexpected token 'CategoryInfo' in expression or statement.
+At line:1 char:75
++ ...  CategoryInfo          : ObjectNotFound: (C:\Users\user\Desktop\shyam
++
+~
+Missing closing ')' in expression.
+At line:2 char:20
++    \name.txt:String) [Get-Content], ItemNotFoundException
++                    ~
+Unexpected token ')' in expression or statement.
+At line:2 char:25
++    \name.txt:String) [Get-Content], ItemNotFoundException
++                         ~
+Missing ] at end of attribute or type literal.
+At line:2 char:26
++    \name.txt:String) [Get-Content], ItemNotFoundException
++                          ~~~~~~~~
+Unexpected token '-Content' in expression or statement.
+At line:2 char:34
++    \name.txt:String) [Get-Content], ItemNotFoundException
++                                  ~
+Unexpected token ']' in expression or statement.
+At line:2 char:35
++    \name.txt:String) [Get-Content], ItemNotFoundException
++                                   ~
+Missing argument in parameter list.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorReco
+   rdException
+    + FullyQualifiedErrorId : MissingExpressionAfterOperator
+
+PS C:\Users\user\Desktop\shyam>     + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.G
+At line:1 char:6
++     + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Comma ...
++      ~
+Missing expression after unary operator '+'.
+At line:1 char:7
++     + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Comma ...
++       ~~~~~~~~~~~~~~~~~~~~~
+Unexpected token 'FullyQualifiedErrorId' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorReco
+   rdException
+    + FullyQualifiedErrorId : MissingExpressionAfterOperator
+
+PS C:\Users\user\Desktop\shyam> Get-Content names.txt
+Radha is a good girl
+
+
+PS C:\Users\user\Desktop\shyam> git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   names.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\user\Desktop\shyam> git add .
+PS C:\Users\user\Desktop\shyam> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   names.txt
+
+PS C:\Users\user\Desktop\shyam> git restore--staged names.txt
+git: 'restore--staged' is not a git command. See 'git --help'.
+PS C:\Users\user\Desktop\shyam> git add names.txt
+PS C:\Users\user\Desktop\shyam> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   names.txt
+
+PS C:\Users\user\Desktop\shyam> git commit -m "names.txt file is modified"
+[master 6109b31] names.txt file is modified
+ 1 file changed, 3 insertions(+)
+PS C:\Users\user\Desktop\shyam> git log
+commit 6109b31316166c98e2dae3e6b2a9c20ae41576b8 (HEAD -> master)
+Author: Sakshi-Agarwal34 <agarwalseema61912@gmail.com>
+Date:   Wed Jun 3 22:57:05 2026 +0530
+
+    names.txt file is modified
+
+commit c994b3cf351cf4a89f45cbce9b8248dfdf33fea7
+Author: Sakshi-Agarwal34 <agarwalseema61912@gmail.com>
+Date:   Wed Jun 3 22:42:14 2026 +0530
+
+    names.txt file is added
+PS C:\Users\user\Desktop\shyam> rm -rf names.txt
+Remove-Item : A parameter cannot be found that matches parameter name 'rf'.
+At line:1 char:4
++ rm -rf names.txt
++    ~~~
+    + CategoryInfo          : InvalidArgument: (:) [Remove-Item], Paramete
+   rBindingException
+    + FullyQualifiedErrorId : NamedParameterNotFound,Microsoft.PowerShell.
+   Commands.RemoveItemCommand
+
+PS C:\Users\user\Desktop\shyam> rm names.txt
+PS C:\Users\user\Desktop\shyam> git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    names.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\user\Desktop\shyam> git add .
+PS C:\Users\user\Desktop\shyam> git commit -m"name.txt file is deleted"
+[master 855d8b6] name.txt file is deleted
+ 1 file changed, 3 deletions(-)
+ delete mode 100644 names.txt
+PS C:\Users\user\Desktop\shyam> git log
+commit 855d8b660f7a7c4f893705dddff77d02e68a27c5 (HEAD -> master)
+Author: Sakshi-Agarwal34 <agarwalseema61912@gmail.com>
+Date:   Wed Jun 3 23:02:51 2026 +0530
+
+    name.txt file is deleted
+
+commit 6109b31316166c98e2dae3e6b2a9c20ae41576b8
+Author: Sakshi-Agarwal34 <agarwalseema61912@gmail.com>
+Date:   Wed Jun 3 22:57:05 2026 +0530
+
+    names.txt file is modified
+
+commit c994b3cf351cf4a89f45cbce9b8248dfdf33fea7
+Author: Sakshi-Agarwal34 <agarwalseema61912@gmail.com>
+Date:   Wed Jun 3 22:42:14 2026 +0530
+
+    names.txt file is added
+PS C:\Users\user\Desktop\shyam> git reset c994b3cf351cf4a89f45cbce9b8248dfdf33fea7
+Unstaged changes after reset:
+D       names.txt
+PS C:\Users\user\Desktop\shyam> git log
+commit c994b3cf351cf4a89f45cbce9b8248dfdf33fea7 (HEAD -> master)
+Author: Sakshi-Agarwal34 <agarwalseema61912@gmail.com>
+Date:   Wed Jun 3 22:42:14 2026 +0530
+
+    names.txt file is added
+PS C:\Users\user\Desktop\shyam> git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    names.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\user\Desktop\shyam> New-Item kumkum.txt -ItemType File
+
+
+    Directory: C:\Users\user\Desktop\shyam
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        03-06-2026     23:14              0 kumkum.txt
+
+
+PS C:\Users\user\Desktop\shyam> git add.
+git: 'add.' is not a git command. See 'git --help'.
+
+The most similar command is
+        add
+PS C:\Users\user\Desktop\shyam> git add .
+PS C:\Users\user\Desktop\shyam> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        renamed:    names.txt -> kumkum.txt
+
+PS C:\Users\user\Desktop\shyam> vi kumkum.txt
+vi : The term 'vi' is not recognized as the name of a cmdlet, function,
+script file, or operable program. Check the spelling of the name, or if a
+path was included, verify that the path is correct and try again.
+At line:1 char:1
++ vi kumkum.txt
++ ~~
+    + CategoryInfo          : ObjectNotFound: (vi:String) [], CommandNotFo
+   undException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\user\Desktop\shyam> notepad kumkum.txt
+PS C:\Users\user\Desktop\shyam> New-Item sanya.txt -ItemType File
+
+
+    Directory: C:\Users\user\Desktop\shyam
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        03-06-2026     23:18              0 sanya.txt
+
+
+PS C:\Users\user\Desktop\shyam> git add .
+PS C:\Users\user\Desktop\shyam> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   kumkum.txt
+        renamed:    names.txt -> sanya.txt
+
+PS C:\Users\user\Desktop\shyam> git stash
+Saved working directory and index state WIP on master: c994b3c names.txt file is added
+PS C:\Users\user\Desktop\shyam> git log
+commit c994b3cf351cf4a89f45cbce9b8248dfdf33fea7 (HEAD -> master)
+Author: Sakshi-Agarwal34 <agarwalseema61912@gmail.com>
+Date:   Wed Jun 3 22:42:14 2026 +0530
+
+    names.txt file is added
+PS C:\Users\user\Desktop\shyam> git stash pop
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   kumkum.txt
+        new file:   sanya.txt
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    names.txt
+
+Dropped refs/stash@{0} (f0a6731b06b3740fd108c5d2e45481aba586566f)
+PS C:\Users\user\Desktop\shyam> git stash
+Saved working directory and index state WIP on master: c994b3c names.txt file is added
+PS C:\Users\user\Desktop\shyam> Get-Content names.txt
+PS C:\Users\user\Desktop\shyam> git stash clear
+PS C:\Users\user\Desktop\shyam> git stash pop
+No stash entries found.
+PS C:\Users\user\Desktop\shyam> git remote add origin https://https://github.com/Sakshi-Agarwal34/krishna.git
+PS C:\Users\user\Desktop\shyam> git remote -v
+origin  https://https://github.com/Sakshi-Agarwal34/krishna.git (fetch)
+origin  https://https://github.com/Sakshi-Agarwal34/krishna.git (push)
+PS C:\Users\user\Desktop\shyam> git push origin master
+fatal: unable to access 'https://https://github.com/Sakshi-Agarwal34/krishna.git/': Could not resolve host: https
+PS C:\Users\user\Desktop\shyam> git remote add origin https://github.com/Sakshi-Agarwal34/krishna.git
+error: remote origin already exists.
+PS C:\Users\user\Desktop\shyam> git remote add origin https://github.com/Sakshi-Agarwal34/ss.git
+error: remote origin already exists.
+PS C:\Users\user\Desktop\shyam> git push origin master
+fatal: unable to access 'https://https://github.com/Sakshi-Agarwal34/krishna.git/': Could not resolve host: https
+PS C:\Users\user\Desktop\shyam> git remote add origin https://https://github.com/Sakshi-Agarwal34/neha.git
+error: remote origin already exists.
+PS C:\Users\user\Desktop\shyam> git remote -v
+origin  https://https://github.com/Sakshi-Agarwal34/krishna.git (fetch)
+origin  https://https://github.com/Sakshi-Agarwal34/krishna.git (push)
+PS C:\Users\user\Desktop\shyam> git remote set-url origin https://github.com/Sakshi-Agarwal34/neha.git
+PS C:\Users\user\Desktop\shyam> git remote -v
+origin  https://github.com/Sakshi-Agarwal34/neha.git (fetch)
+origin  https://github.com/Sakshi-Agarwal34/neha.git (push)
+PS C:\Users\user\Desktop\shyam> git remote add origin https://github.com/Sakshi-Agarwal34/neha.git
+error: remote origin already exists.
+PS C:\Users\user\Desktop\shyam> git remote remove origin
+PS C:\Users\user\Desktop\shyam> git remote add origin https://github.com/Sakshi-Agarwal34/neha.git
+PS C:\Users\user\Desktop\shyam> push origin master
+push : The term 'push' is not recognized as the name of a cmdlet,
+function, script file, or operable program. Check the spelling of the
+name, or if a path was included, verify that the path is correct and try
+again.
+At line:1 char:1
++ push origin master
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (push:String) [], CommandNot
+   FoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\user\Desktop\shyam> git push origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 230 bytes | 230.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/Sakshi-Agarwal34/neha.git
+ * [new branch]      master -> master
+PS C:\Users\user\Desktop\shyam> New-Item anya.txt -ItemType File
+
+
+    Directory: C:\Users\user\Desktop\shyam
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        03-06-2026     23:43              0 anya.txt
+
+
+PS C:\Users\user\Desktop\shyam> git add .
+PS C:\Users\user\Desktop\shyam> get commit -m "hotel.txt file is added"
+get : The term 'get' is not recognized as the name of a cmdlet, function,
+script file, or operable program. Check the spelling of the name, or if a
+path was included, verify that the path is correct and try again.
+At line:1 char:1
++ get commit -m "hotel.txt file is added"
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (get:String) [], CommandNotF
+   oundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\user\Desktop\shyam> get commit -m "anya.txt file is added"
+get : The term 'get' is not recognized as the name of a cmdlet, function,
+script file, or operable program. Check the spelling of the name, or if a
+path was included, verify that the path is correct and try again.
+At line:1 char:1
++ get commit -m "anya.txt file is added"
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (get:String) [], CommandNotF
+   oundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\user\Desktop\shyam> git commit -m "anya.txt file is added"
+[master 09722f6] anya.txt file is added
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 anya.txt
+PS C:\Users\user\Desktop\shyam> New-Item roll.txt -ItemType File
+
+
+    Directory: C:\Users\user\Desktop\shyam
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        03-06-2026     23:47              0 roll.txt
+
+
+PS C:\Users\user\Desktop\shyam> git add .
+PS C:\Users\user\Desktop\shyam>  git commit -m "roll.txt file is added"
+[master 495cc17] roll.txt file is added
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 roll.txt
+PS C:\Users\user\Desktop\shyam> git log
+commit 495cc178e3f1fce36d5bcbf8c87334924b24880e (HEAD -> master)
+Author: Sakshi-Agarwal34 <agarwalseema61912@gmail.com>
+Date:   Wed Jun 3 23:47:50 2026 +0530
+
+    roll.txt file is added
+
+commit 09722f664ef118f1027b853a7f750a528e7deeff
+Author: Sakshi-Agarwal34 <agarwalseema61912@gmail.com>
+Date:   Wed Jun 3 23:46:45 2026 +0530
+
+    anya.txt file is added
+
+commit c994b3cf351cf4a89f45cbce9b8248dfdf33fea7 (origin/master)
+Author: Sakshi-Agarwal34 <agarwalseema61912@gmail.com>
+Date:   Wed Jun 3 22:42:14 2026 +0530
+
+    names.txt file is added
+PS C:\Users\user\Desktop\shyam>
+fwd-i-search: _
